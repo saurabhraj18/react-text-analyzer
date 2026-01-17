@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-export default function App() {
+export default function About() {
 
   const [mystyle, setMystyle] = useState({
     color: "black",
