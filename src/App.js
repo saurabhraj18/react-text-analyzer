@@ -1,0 +1,19 @@
+import "./App.css";
+//import About from "./Components/About";
+import Navbar from "./Components/Navbar";
+import TextForm from "./Components/TextForm";
+
+let name = "saurabh";
+function App() {
+  return (
+    <>
+      <Navbar title="TextUtils" />
+      <div className="container">
+        {<TextForm heading="Enter the text to analyze below" />}
+        {/*<About/> */}
+      </div>
+    </>
+  );
+}
+
+export default App;
