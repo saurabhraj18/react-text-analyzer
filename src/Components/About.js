@@ -52,6 +52,28 @@ export default function About() {
         </div>
 
       </div>
+       <hr />
+
+      <div className="my-4">
+        <h2>What is TextUtils?</h2>
+        <p>
+          TextUtils is a simple and powerful text utility application built
+          using React. It helps users manipulate and analyze text easily.
+        </p>
+
+        <ul>
+          <li>✍️ Convert text to Uppercase & Lowercase</li>
+          <li>🧹 Remove extra spaces</li>
+          <li>📊 Count words and characters</li>
+          <li>⏱️ Estimate reading time</li>
+          <li>🌙 Supports Light & Dark Mode</li>
+        </ul>
+
+        <p>
+          This project is created to practice React concepts like
+          <strong> useState</strong>, components, props, and routing.
+        </p>
+      </div>
 
       <div className="container my-3">
         <button

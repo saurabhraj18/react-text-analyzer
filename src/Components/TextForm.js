@@ -5,12 +5,29 @@ export default function TextForm(props) {
         //console.log("Uppercase was clicked" + text);
         let newText = text.toUpperCase();
         setText(newText)
+        props.showAlert("Converted to Uppercase!", "Success");
     };
      const handleLoClick = () => {
         //console.log("Uppercase was clicked" + text);
         let newText = text.toLowerCase();
         setText(newText)
+        props.showAlert("Converted to Lowercase!", "Success");
     };
+    const handleClearText = () => {
+  setText("");
+  props.showAlert("Text has been Cleared!", "Success");
+};
+
+const handleCopyText = () => {
+  navigator.clipboard.writeText(text);
+  props.showAlert("Copied!", "Success");
+};
+
+const handleExtraSpaces = () => {
+  let newText = text.split(/\s+/).join(" ");
+  setText(newText);
+  props.showAlert("Extra Space removed!", "Success");
+};
     const handleOnchange = (event) => {
         //console.log("On Change");
         setText(event.target.value);
@@ -38,6 +55,18 @@ export default function TextForm(props) {
             <button className="btn btn-primary mx-2" onClick={handleLoClick}>
                 Convert to Lowercase
             </button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleClearText}>
+  Clear Text
+</button>
+
+<button className="btn btn-success mx-1 my-1" onClick={handleCopyText}>
+  Copy Text
+</button>
+
+<button className="btn btn-warning mx-1 my-1" onClick={handleExtraSpaces}>
+  Remove Extra Spaces
+</button>
+
 
         </div>
         <div className="container my-2">
@@ -46,6 +75,9 @@ export default function TextForm(props) {
             <p>{0.008 * text.split(" ").length} Minutes read</p>
             <h2>preview</h2>
             <p>{text}</p>
+            <h2>Preview</h2>
+            <p>{text.length > 0 ? text : "Nothing to preview!"}</p>
+
         </div>
         </>
     );
