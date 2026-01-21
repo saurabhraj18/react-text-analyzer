@@ -1,29 +1,39 @@
 import React, { useState } from "react";
 
 export default function TextForm(props) {
+
+    const isTextEmpty = () => {
+  return text.trim().length === 0;
+};
+
     const handleUpClick = () => {
         //console.log("Uppercase was clicked" + text);
+        if (isTextEmpty()) return;
         let newText = text.toUpperCase();
         setText(newText)
         props.showAlert("Converted to Uppercase!", "Success");
     };
      const handleLoClick = () => {
         //console.log("Uppercase was clicked" + text);
+        if (isTextEmpty()) return;
         let newText = text.toLowerCase();
         setText(newText)
         props.showAlert("Converted to Lowercase!", "Success");
     };
     const handleClearText = () => {
+    if (isTextEmpty()) return;
   setText("");
   props.showAlert("Text has been Cleared!", "Success");
 };
 
 const handleCopyText = () => {
+if (isTextEmpty()) return;
   navigator.clipboard.writeText(text);
   props.showAlert("Copied!", "Success");
 };
 
 const handleExtraSpaces = () => {
+if (isTextEmpty()) return;
   let newText = text.split(/\s+/).join(" ");
   setText(newText);
   props.showAlert("Extra Space removed!", "Success");
@@ -71,7 +81,14 @@ const handleExtraSpaces = () => {
         </div>
         <div className="container my-2">
             <h1>Your text summary</h1>
-            <p>{text.split(" ").length} words and {text.length} characters</p>
+            <p>
+  {
+    text.trim() === ""
+      ? 0
+      : text.trim().split(/\s+/).length
+  } words
+</p>
+
             <p>{0.008 * text.split(" ").length} Minutes read</p>
             <h2>preview</h2>
             <p>{text}</p>
