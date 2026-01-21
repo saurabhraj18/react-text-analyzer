@@ -92,7 +92,6 @@ if (isTextEmpty()) return;
             <p>{0.008 * text.split(" ").length} Minutes read</p>
             <h2>preview</h2>
             <p>{text}</p>
-            <h2>Preview</h2>
             <p>{text.length > 0 ? text : "Nothing to preview!"}</p>
 
         </div>

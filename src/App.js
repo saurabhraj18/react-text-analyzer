@@ -39,7 +39,10 @@ function App() {
   return (
     <Router>
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
-      <Alert alert={alert} />
+      <div style={{ height: "50px" }}>
+       {alert && <Alert alert={alert} />}
+      </div>
+
 
       <div className="container my-3">
         <Routes>
