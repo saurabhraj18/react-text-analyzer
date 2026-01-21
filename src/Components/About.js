@@ -30,28 +30,6 @@ export default function About() {
   return (
     <div className="container" style={mystyle}>
       <h1 className="my-3">About Us</h1>
-
-      <div className="accordion" id="accordionExample">
-
-        <div className="accordion-item">
-          <h2 className="accordion-header">
-            <button
-              className="accordion-button"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseOne"
-            >
-              Accordion Item #1
-            </button>
-          </h2>
-          <div id="collapseOne" className="accordion-collapse collapse show">
-            <div className="accordion-body">
-              First accordion body
-            </div>
-          </div>
-        </div>
-
-      </div>
        <hr />
 
       <div className="my-4">
